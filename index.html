@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>date of today</title>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="today"></h1>
+  </body>
+
+  <script>
+    let todayText = document.getElementById("today");
+
+    let tarix = new Date();
+    let day = String(tarix.getDate()).padStart(2, "0");
+    let month = String(tarix.getMonth() + 1).padStart(2, "0");
+    let year = tarix.getFullYear();
+
+    todayText.innerHTML = `${day}.${month}.${year}`;
+  </script>
+</html>
